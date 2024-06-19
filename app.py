@@ -37,8 +37,7 @@ def transcribe_stream(audio_file_path, model):
 def main(youtube_url, output_txt_path):
     # Load Whisper model
     model = whisper.load_model("base")
-    model.to(device)
-
+    
     # Extract audio stream
     audio_path = extract_audio_stream(youtube_url)
     if not audio_path:
