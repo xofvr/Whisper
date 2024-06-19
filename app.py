@@ -2,8 +2,6 @@ import whisper
 import yt_dlp as youtube_dl
 import os
 
-import torch
-
 # Function to extract audio stream from YouTube
 def extract_audio_stream(youtube_url):
     ydl_opts = {
@@ -38,7 +36,6 @@ def transcribe_stream(audio_file_path, model):
 # Main function
 def main(youtube_url, output_txt_path):
     # Load Whisper model
-    device = torch.device("mps")
     model = whisper.load_model("base")
     model.to(device)
 
